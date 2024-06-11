@@ -16,39 +16,35 @@ public class COMP {
 	}
 	
 	public static void main(String[] args) {
-		String path = new String();
-		Compiler compiler = new Compiler();
-		if (args.length <= 1 || args[0].equals("--help") || args[0].equals("-h")) {
-			intrucoesIniciais();
-		}
-		else {
-			path = args[1];
-			if (args[0].equals("-l")){
-				compiler.setFilePath(path);
-				compiler.analiseLexica();
-			}
-			else if (args[0].equals("-s")){
-				compiler.setFilePath(path);
-				compiler.analiseSintatica();
-	
-			}
-			else if (args[0].equals("-a")){
-				compiler.setFilePath(path);
-				compiler.impressaoAST();
-			}
-			else if (args[0].equals("-c")){
-				compiler.setFilePath(path);
-				compiler.analiseContexto();
-			}
-			else if (args[0].equals("-g")){
-				compiler.setFilePath(path);
-				compiler.geracaoCodigo();
-			}
-			else {
-				System.out.println("A opcao especificada " + args[0] + " é invalida.");
-				System.out.println("Siga as instrucoes do comando de ajuda abaixo para compilar.");
-			}
-		}
+Compiler compiler = new Compiler();
+String path = args.length > 1 ? args[1] : "";
+
+if (args.length <= 1 || args[0].equals("--help") || args[0].equals("-h")) {
+    intrucoesIniciais();
+} else {
+    compiler.setFilePath(path);
+    switch (args[0]) {
+        case "-l":
+            compiler.analiseLexica();
+            break;
+        case "-s":
+            compiler.analiseSintatica();
+            break;
+        case "-a":
+            compiler.impressaoAST();
+            break;
+        case "-c":
+            compiler.analiseContexto();
+            break;
+        case "-g":
+            compiler.geracaoCodigo();
+            break;
+        default:
+            System.out.println("A opcao especificada " + args[0] + " é invalida.");
+            System.out.println("Siga as instrucoes do comando de ajuda abaixo para compilar.");
+            break;
+    }
+}
 
 	}
 }

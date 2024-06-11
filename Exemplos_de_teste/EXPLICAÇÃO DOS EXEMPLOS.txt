@@ -6,5 +6,3 @@ Exemplo2_contexto.txt	- Análise de Contexto
 Exemplo3_lexico.txt	- Análise Léxico, com teste de tokens válidos e inválidos
 Exemplo4_sitatico.txt	- Análise Sintático, com teste com declaração de variáveis 
 programa_erro.txt	- Análise de Contexto, programa mal formado
-soma.txt		- Executa uma soma simples
-teste_tipo.txt 		- Análise de Contexto, programa bem formado
