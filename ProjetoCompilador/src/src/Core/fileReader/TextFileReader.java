@@ -45,7 +45,7 @@ public class TextFileReader {
 		
 		try {	
 				
-			String current = new Character((char) text.read()).toString();
+			String current = Character.toString((char) text.read());
 			if (current.hashCode() != UTF8_BOM.hashCode())
 				text.reset();
 			else 

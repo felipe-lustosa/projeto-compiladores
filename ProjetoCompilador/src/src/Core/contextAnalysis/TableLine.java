@@ -12,7 +12,7 @@ public class TableLine {
 	}
 	
 	public String toString() {
-		String resultado = new String((new Integer(level)).toString() + "\t " + 
+		String resultado = new String(Integer.valueOf(level).toString() + "\t " + 
 							identifier.getSpelling() + "\t\t " + 
 							used +  "\t\t " + attribute);
 		return resultado;
