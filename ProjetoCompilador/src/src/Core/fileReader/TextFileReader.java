@@ -10,9 +10,9 @@ public class TextFileReader {
 	public static final String UTF8_BOM = "\uFEFF";
 	public static final char UTF8_SPACE = '\u0020';
 	
-	public void cabeçalhoErro() {
+	public void cabecalhoErro() {
 		System.out.println("!ERRO - LEITURA DE ARQUIVO");
-//		System.out.println("-> Linha: " + currentToken.getLine() + ", Posição: " + currentToken.getColumn());
+//		System.out.println("-> Linha: " + currentToken.getLine() + ", Posicao: " + currentToken.getColumn());
 		
 	}
 	public String indent() {
@@ -29,17 +29,17 @@ public class TextFileReader {
 			text = new BufferedReader(new InputStreamReader(new FileInputStream(path), "UTF-8"));
 		}
 		catch(Exception error) {
-			cabeçalhoErro();
-			System.out.println("-> Não foi possível abrir o arquivo para leitura.");
+			cabecalhoErro();
+			System.out.println("-> Nao foi possivel abrir o arquivo para leitura.");
 			interromperLeitura();
 		}
 		
 		try {
-			text.mark(1000000);//marca a posição inicial da stream
+			text.mark(1000000);//marca a posicao inicial da stream
 		}
 		catch(Exception E) {
-			cabeçalhoErro();
-			System.out.println("-> Não foi possível configurar a marcação da posição incial do arquivo.");
+			cabecalhoErro();
+			System.out.println("-> Nao foi possivel configurar a marcacao da posicao incial do arquivo.");
 			interromperLeitura();
 		}
 		
@@ -52,8 +52,8 @@ public class TextFileReader {
 				text.mark(10000000);
 		}
 		catch(Exception E) {
-			cabeçalhoErro();
-			System.out.println("-> Não foi possível configurar a marcação da posição incial do arquivo.");
+			cabecalhoErro();
+			System.out.println("-> Nao foi possivel configurar a marcacao da posicao incial do arquivo.");
 			interromperLeitura();
 		}
 		
@@ -65,8 +65,8 @@ public class TextFileReader {
 			text.mark(10000000);
 		}
 		catch (Exception E)	{
-			cabeçalhoErro();
-			System.out.println("-> Não foi possível ler um dos caracteres do arquivo.");
+			cabecalhoErro();
+			System.out.println("-> Nao foi possivel ler um dos caracteres do arquivo.");
 			interromperLeitura();
 		}
 		return current;
@@ -78,8 +78,8 @@ public class TextFileReader {
 			text.reset(); 
 		}
 		catch (Exception E) {
-			cabeçalhoErro();
-			System.out.println("-> Não foi possível ler um dos caracteres do arquivo.");
+			cabecalhoErro();
+			System.out.println("-> Nao foi possivel ler um dos caracteres do arquivo.");
 			interromperLeitura();
 		}
 		return current;
@@ -93,8 +93,8 @@ public class TextFileReader {
 				aux = text.readLine();
 			}
 			catch(Exception E) { 
-				cabeçalhoErro();
-				System.out.println("-> Não foi possível ler uma das linhas do arquivo.");
+				cabecalhoErro();
+				System.out.println("-> Nao foi possivel ler uma das linhas do arquivo.");
 				interromperLeitura();
 			}
 			if (aux != null)
@@ -110,8 +110,8 @@ public class TextFileReader {
 			text.reset();
 		}
 		catch(Exception E) {
-			cabeçalhoErro();
-			System.out.println("-> Não foi possível resetar o posição do buffer do arquivo.");
+			cabecalhoErro();
+			System.out.println("-> Nao foi possivel resetar o posicao do buffer do arquivo.");
 			interromperLeitura();
 		}
 	}
@@ -121,8 +121,8 @@ public class TextFileReader {
 			text.close();
 		}
 		catch(Exception E) {
-			cabeçalhoErro();
-			System.out.println("-> Não foi possível fechar o arquivo.");
+			cabecalhoErro();
+			System.out.println("-> Nao foi possivel fechar o arquivo.");
 			interromperLeitura();
 		}
 	}
