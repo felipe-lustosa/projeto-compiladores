@@ -37,11 +37,11 @@ public class Checker implements Visitor {
 		return retorno;
 	}
 	public void cabeçalhoErro() {
-		System.out.println(indent() + "!ERRO - ANÁLISE DE CONTEXTO");
+		System.out.println(indent() + "!ERRO - ANALISE DE CONTEXTO");
 		System.out.print(indent() +   "  └ ");
 	}
 	public void cabeçalhoErro(int linha, int posição) {
-		System.out.println(indent() + "!ERRO - ANÁLISE DE CONTEXTO");
+		System.out.println(indent() + "!ERRO - ANALISE DE CONTEXTO");
 		if (posição == -1)
 			System.out.println(indent() + "  * Linha: " + linha);
 		else 
@@ -54,7 +54,7 @@ public class Checker implements Visitor {
 	
 	
 	public void check (ProgramaNode P) {
-		System.out.println ("---> Iniciando identificação de nomes");
+		System.out.println ("---> Iniciando identificacao de nomes");
 		P.visit(this);
 	}
 	
@@ -82,7 +82,7 @@ public class Checker implements Visitor {
 		}
 		if (erro) {
 			cabeçalhoErro(CA.V.N.getLine(), CA.V.N.getColumn());
-			System.out.println("[T1] Atribuição com tipos incompatíveis." 
+			System.out.println("[T1] Atribuição com tipos incompativeis." 
 				+ " A variável " + CA.V.N.getSpelling() + " possui tipo " + CA.V.tipo + " [" + Token.spellings[CA.V.tipo] + "]" 
 				+ " enquanto a expressão possui tipo " + CA.E.tipo + " [" + Token.spellings[CA.E.tipo] + "].");
 		}
@@ -99,7 +99,7 @@ public class Checker implements Visitor {
 		if (CC.E != null) CC.E.visit(this);
 		if (CC.E.tipo != TabelaDeIdentificação.BOOLEAN) {
 			cabeçalhoErro();
-			System.out.println("[T2] Tipos incompatíveis no comando condicional." 
+			System.out.println("[T2] Tipos incompativeis no comando condicional." 
 					+ " A expressão possui tipo " + CC.E.tipo + " [" + Token.spellings[CC.E.tipo] + "]" 
 					+ " enquanto era esperado o tipo " + TabelaDeIdentificação.BOOLEAN + " [" + Token.spellings[TabelaDeIdentificação.BOOLEAN] + "].");
 		}
@@ -115,7 +115,7 @@ public class Checker implements Visitor {
 		if (CC.E.tipo != TabelaDeIdentificação.BOOLEAN) {
 //			cabeçalhoErro(, (int) -1);
 			cabeçalhoErro();
-			System.out.println("[T5] Tipos incompatíveis no comando iterativo." 
+			System.out.println("[T5] Tipos incompativeis no comando iterativo." 
 					+ " A expressão possui tipo " + CC.E.tipo + " [" + Token.spellings[CC.E.tipo] + "]" 
 					+ " enquanto era esperado o tipo " + TabelaDeIdentificação.BOOLEAN + " [" + Token.spellings[TabelaDeIdentificação.BOOLEAN] + "].");
 		}
@@ -192,7 +192,7 @@ public class Checker implements Visitor {
 			if (E.E1.tipo != E.E2.tipo) {
 				cabeçalhoErro(E.O.O.getLine(), E.O.O.getColumn());
 				System.out.println("[T3] Operandos"
-						+ " possuem tipos incompatíveis para o operador relacional " + E.O.O.getSpelling() + "." 
+						+ " possuem tipos incompativeis para o operador relacional " + E.O.O.getSpelling() + "." 
 						+ " O primeiro operando possui tipo " + E.E1.tipo + " [" + Token.spellings[E.E1.tipo] + "]" 
 						+ " enquanto o segundo operando possui tipo " + E.E2.tipo + " [" + Token.spellings[E.E2.tipo] + "].");
 			}
@@ -236,7 +236,7 @@ public class Checker implements Visitor {
 			if (ES.T.tipo != ES.ST.tipo) {	// REGRA T4
 				cabeçalhoErro(ES.ST.O.O.getLine(), ES.ST.O.O.getColumn() );
 				System.out.println("[T4] Operandos"
-						+ " possuem tipos incompatíveis para o operador " + ES.ST.O.O.getSpelling() + "." 
+						+ " possuem tipos incompativeis para o operador " + ES.ST.O.O.getSpelling() + "." 
 						+ " O primeiro operando possui tipo " + ES.T.tipo + " [" + Token.spellings[ES.T.tipo] + "]" 
 						+ " enquanto o segundo operando possui tipo " + ES.ST.tipo + " [" + Token.spellings[ES.ST.tipo] + "].");
 			}
@@ -338,7 +338,7 @@ public class Checker implements Visitor {
 		if (S.E != null) S.E.visit(this);
 		if (S.E.tipo != TabelaDeIdentificação.INTEGER) {
 			cabeçalhoErro();
-			System.out.println("[T6] Tipos incompatíveis do índice do seletor." 
+			System.out.println("[T6] Tipos incompativeis do indice do seletor." 
 					+ " A expressão possui tipo " + S.E.tipo + " [" + Token.spellings[S.E.tipo] + "]" 
 					+ " enquanto era esperado o tipo " + TabelaDeIdentificação.INTEGER + " [" + Token.spellings[TabelaDeIdentificação.INTEGER] + "].");
 		}
@@ -372,7 +372,7 @@ public class Checker implements Visitor {
 			if (SF.F.tipo != SF.próximaS.tipo) {	// REGRA T7
 				cabeçalhoErro(SF.próximaS.O.O.getLine(), SF.próximaS.O.O.getColumn());
 				System.out.println("[T7] Operandos"
-						+ " possuem tipos incompatíveis para o operador " + SF.próximaS.O.O.getSpelling() + "." 
+						+ " possuem tipos incompativeis para o operador " + SF.próximaS.O.O.getSpelling() + "." 
 						+ " O primeiro operando possui tipo " + SF.F.tipo + " [" + Token.spellings[SF.F.tipo] + "]" 
 						+ " enquanto o segundo operando possui tipo " + SF.próximaS.tipo + " [" + Token.spellings[SF.próximaS.tipo] + "].");
 			}
@@ -427,7 +427,7 @@ public class Checker implements Visitor {
 			if (ST.T.tipo != ST.próximaS.tipo) {	// REGRA T4
 				cabeçalhoErro(ST.próximaS.O.O.getLine(),ST.próximaS.O.O.getColumn());
 				System.out.println("[T4] Operandos"
-						+ " possuem tipos incompatíveis para o operador " + ST.próximaS.O.O.getSpelling() + "." 
+						+ " possuem tipos incompativeis para o operador " + ST.próximaS.O.O.getSpelling() + "." 
 						+ " O primeiro operando possui tipo " + ST.T.tipo + " [" + Token.spellings[ST.T.tipo] + "]" 
 						+ " enquanto o segundo operando possui tipo " + ST.próximaS.tipo + " [" + Token.spellings[ST.próximaS.tipo] + "].");
 			}
@@ -483,7 +483,7 @@ public class Checker implements Visitor {
 			if (T.F.tipo != T.SF.tipo) {	// REGRA T7
 				cabeçalhoErro(T.SF.O.O.getLine(), T.SF.O.O.getColumn());
 				System.out.println("[T7] Operandos"
-						+ " possuem tipos incompatíveis para o operador " + T.SF.O.O.getSpelling() + "." 
+						+ " possuem tipos incompativeis para o operador " + T.SF.O.O.getSpelling() + "." 
 						+ " O primeiro operando possui tipo " + T.F.tipo + " [" + Token.spellings[T.F.tipo] + "]" 
 						+ " enquanto o segundo operando possui tipo " + T.SF.tipo + " [" + Token.spellings[T.SF.tipo] + "].");
 			}
@@ -521,7 +521,7 @@ public class Checker implements Visitor {
 		if (TA.INDEX_2  != null) TA.INDEX_2.visit(this);
 		if (Integer.parseInt(TA.INDEX_1.getSpelling()) > Integer.parseInt(TA.INDEX_2.getSpelling())) {
 			cabeçalhoErro();
-			System.out.println("[T8] Índices inválidos na declaração de tipo agregado.");
+			System.out.println("[T8] Indices inválidos na declaracao de tipo agregado.");
 		}
 	}
 

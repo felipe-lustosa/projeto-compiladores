@@ -11,10 +11,10 @@ import Core.contextAnalysis.Checker;
 public class Compiler {
 	private String filePath; 		//	Caminho completo do arquivo
 	private TextFileReader reader;          //	Leitura do arquivo com código fonte
-	private Scanner scanner;		//	-l Análise léxica
-	private Parser parser;			//	-s Análise sintática
+	private Scanner scanner;		//	-l Analise léxica
+	private Parser parser;			//	-s Analise sintatica
 	private Printer printer;		// 	-a Impressão AST
-	private Checker checker;		// 	-c Análise de contexto
+	private Checker checker;		// 	-c Analise de contexto
 //	private Coder coder;			// 	-g Geração de código
 	private ProgramaNode P;
 	
@@ -37,25 +37,25 @@ public class Compiler {
 	public void analiseLexica() {
 		System.out.println("Caminho do arquivo-fonte: " + filePath);
 		resetReader(); // Reinicia a leitura do arquivo
-		System.out.println ("> Análise Léxica - START");
+		System.out.println ("> Analise Léxica - START");
 		scanner = new Scanner(reader);
 		Token temp = scanner.scan();
 		while (Token.EOF != temp.getType())
 			temp = scanner.scan();
 		reader.reset();
 		scanner.toString();
-		System.out.println ("< Análise Léxica - END");
+		System.out.println ("< Analise Léxica - END");
 		System.out.println ("");
 	}
 	
 	public void analiseSintatica() {
 		analiseLexica();
 		resetReader();
-		System.out.println ("> Análise Sintática - START");
+		System.out.println ("> Analise Sintatica - START");
 		reader.reset();
 		parser = new Parser(reader);
 		P = parser.parse();
-		System.out.println ("< Análise Sintática - END");
+		System.out.println ("< Analise Sintatica - END");
 		System.out.println ("");
 	}
 	
@@ -68,16 +68,16 @@ public class Compiler {
 		System.out.println ("");
 	}
 	public void tabelaIdenfificacao() {
-		System.out.println ("> Tabela de Identificação - START");
+		System.out.println ("> Tabela de Identificacao - START");
 		System.out.println(checker.getTabelaDeIdentificação().toString());
-		System.out.println ("< Tabela de Identificação - END");
+		System.out.println ("< Tabela de Identificacao - END");
 	}
 	public void analiseContexto() {
 		impressaoAST();
-		System.out.println ("> Análise de Contexto - START");
+		System.out.println ("> Analise de Contexto - START");
 		checker = new Checker();
 		checker.check(P);
-		System.out.println ("< Análise de Contexto - END");
+		System.out.println ("< Analise de Contexto - END");
 //		tabelaIdenfificacao();
 		System.out.println ("");
 	}

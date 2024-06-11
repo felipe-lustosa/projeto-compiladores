@@ -17,11 +17,11 @@ public class TabelaDeIdentificação {
 		return retorno;
 	}
 	public void cabeçalhoErro() {
-		System.out.println(indent() + "!ERRO - ANÁLISE DE CONTEXTO");
+		System.out.println(indent() + "!ERRO - ANALISE DE CONTEXTO");
 		System.out.print(indent() +   "  └ ");
 	}
 	public void cabeçalhoErro(int linha, int posição) {
-		System.out.println(indent() + "!ERRO - ANÁLISE DE CONTEXTO");
+		System.out.println(indent() + "!ERRO - ANALISE DE CONTEXTO");
 		System.out.println(indent() + "  * Linha: " + linha + ", Posição: " + posição);
 		System.out.print(indent() +   "  └ ");
 	}
@@ -72,7 +72,7 @@ public class TabelaDeIdentificação {
 	
 	@Override 
 	public String toString() {
-		String resultado = new String("n\t nível\t identificador\t utilizado\t atributo\n");
+		String resultado = new String("n\t nivel\t identificador\t utilizado\t atributo\n");
 		for (int c = 0; c < table.size(); c++) {
 			TableLine currentLine = table.get(c); 
 			resultado += String.format("%04d", c) + "\t " + currentLine.toString() + "\n";

@@ -46,12 +46,12 @@ public class Parser {
 		return retorno;
 	}
 	public void cabeçalhoErro() {
-		System.out.println(indent() + "!ERRO - ANÁLISE SINTÁTICA");
+		System.out.println(indent() + "!ERRO - ANALISE SINTATICA");
 		System.out.println(indent() + "  * Linha: " + currentToken.getLine() + ", Posição: " + currentToken.getColumn());
 		System.out.print(indent() +   "  └ ");
 	}
 	public void interromperAnálise() {
-		System.out.println(indent() + "A ANÁLISE SINTÁTICA FOI INTERROMPIDA DEVIDO A ERROS OCORRIDOS");
+		System.out.println(indent() + "A ANALISE SINTATICA FOI INTERROMPIDA DEVIDO A ERROS OCORRIDOS");
 		System.exit(0);
 	}
 	public Token accept(int expectedType) {

@@ -14,7 +14,7 @@ public class Scanner {
 	}
 	
 	public void cabeçalhoErro() {
-		System.out.println(indent() + "!ERRO - ANÁLISE LÉXICA");
+		System.out.println(indent() + "!ERRO - ANALISE LÉXICA");
 		System.out.println(indent() + "  * Linha: " + getCurrentLine() + ", Posição: " + getCurrentColumn());
 		System.out.print(indent() +   "  └ ");
 	}

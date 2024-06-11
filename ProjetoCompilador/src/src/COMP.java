@@ -45,8 +45,8 @@ public class COMP {
 				compiler.geracaoCodigo();
 			}
 			else {
-				System.out.println("A opção especificada " + args[0] + " é inválida.");
-				System.out.println("Siga as instruções do comando de ajuda abaixo para compilar.");
+				System.out.println("A opcao especificada " + args[0] + " é invalida.");
+				System.out.println("Siga as instrucoes do comando de ajuda abaixo para compilar.");
 			}
 		}
 
