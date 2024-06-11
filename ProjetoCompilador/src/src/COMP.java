@@ -1,25 +1,25 @@
 public class COMP {
-	private static void help() {
-		System.out.println("\n\n----- BEM VINDO AO COMPILADOR -----\n\n");
-		System.out.println("Opcoes de compilacao disponiveis:\n");
-		System.out.println("\t -l \t Analise lexica.");
-		System.out.println("\t -s \t Analise sintatica.");
-		System.out.println("\t -a \t Impressao da AST.");
-		System.out.println("\t -c \t Analise de contexto.");
-		System.out.println("");
-		System.out.println("Para executar a compilacao e necessario digitar o comando \"java COMP\", \n"
-                        + "seguido da opcao de compilacao e o caminho completo \npara o arquivo de "
-                        + "codigo-fonte desejado.");
-		System.out.println("\nO caminho para o arquivo deve ser escrito sem as aspas duplas.\n"
-                        + "Exemplo da Analise lexica abaixo:\n");
-		System.out.println("\t java COMP -l \"C:\\Users\\User\\Documents\\codigo-fonte.txt\"\n");
+	private static void intrucoesIniciais() {
+		System.out.println("\n=== BEM-VINDO AO COMPILADOR ===\n");
+
+		System.out.println("Escolha uma das opçoes de compilaçao:\n");
+		System.out.println("\t-l\tAnálise léxica");
+		System.out.println("\t-s\tAnálise sintática");
+		System.out.println("\t-a\tImpressão da AST");
+		System.out.println("\t-c\tAnálise de contexto\n");
+
+		System.out.println("Para compilar, use o comando:");
+		System.out.println("\tjava COMP <opçao> <caminho_do_arquivo>\n");
+
+		System.out.println("Exemplo de Análise Léxica:");
+		System.out.println("\tjava COMP -l C:\\Users\\User\\Documents\\codigo-fonte.txt\n");
 	}
 	
 	public static void main(String[] args) {
 		String path = new String();
 		Compiler compiler = new Compiler();
 		if (args.length <= 1 || args[0].equals("--help") || args[0].equals("-h")) {
-			help();
+			intrucoesIniciais();
 		}
 		else {
 			path = args[1];
