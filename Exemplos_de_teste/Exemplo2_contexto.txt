@@ -1,0 +1,11 @@
+! CONTEXTO -
+program p1; 
+	var a: array [10 .. 5] of boolean;
+	var b: boolean;
+    begin 
+		while a[10>5] 
+		do
+			b := b
+		;
+    end
+.

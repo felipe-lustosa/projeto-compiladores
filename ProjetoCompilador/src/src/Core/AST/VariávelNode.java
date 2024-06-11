@@ -1,0 +1,18 @@
+package Core.AST;
+
+import Core.lexicalAnalysis.Token;
+import Core.syntaxAnalysis.Visitor;
+
+public class VariávelNode extends FatorNode {
+	public Token N;
+	public SeletorNode S; // É uma lista de seletores
+	public Node declaração;
+	
+	public void visit(Visitor v) {
+		v.visitVariável(this);
+	}
+	public VariávelNode(Token N, SeletorNode S) {
+		this.N = N;
+		this.S = S;
+	}
+}
