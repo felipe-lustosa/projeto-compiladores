@@ -88,7 +88,7 @@ public class Printer implements Visitor {
 	}
 	
 	public void print(ProgramaNode P) {
-		System.out.println ("---> Iniciando impressão da árvore");
+		System.out.println ("---> Iniciando Impressao da árvore");
 		P.visit(this);
 	}
 

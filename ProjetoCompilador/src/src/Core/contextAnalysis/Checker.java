@@ -59,19 +59,19 @@ public class Checker implements Visitor {
 	}
 	
 	@Override
-	public void visitComandoAtribuição(ComandoAtribuiçãoNode CA) {
+	public void visitComandoAtribuição(ComandoAtribuiçãoNode attributionCommand) {
 		
-		if (CA.V != null) CA.V.visit(this); // Isto cobre a regra E1.
+		if (attributionCommand.V != null) attributionCommand.V.visit(this); // Isto cobre a regra E1.
 		
-		if (CA.E != null) CA.E.visit(this);
+		if (attributionCommand.E != null) attributionCommand.E.visit(this);
 		boolean erro = false;
-		switch (CA.V.tipo) {
+		switch (attributionCommand.V.tipo) {
 			case TabelaDeIdentificação.BOOLEAN:
-				if (CA.E.tipo != TabelaDeIdentificação.BOOLEAN)
+				if (attributionCommand.E.tipo != TabelaDeIdentificação.BOOLEAN)
 					erro = true;
 				break;
 			case TabelaDeIdentificação.INTEGER:
-				if (CA.E.tipo != TabelaDeIdentificação.INTEGER)
+				if (attributionCommand.E.tipo != TabelaDeIdentificação.INTEGER)
 					erro = true;
 				break;
 			case TabelaDeIdentificação.REAL:
@@ -81,10 +81,10 @@ public class Checker implements Visitor {
 				break;
 		}
 		if (erro) {
-			cabeçalhoErro(CA.V.N.getLine(), CA.V.N.getColumn());
+			cabeçalhoErro(attributionCommand.V.N.getLine(), attributionCommand.V.N.getColumn());
 			System.out.println("[T1] Atribuição com tipos incompativeis." 
-				+ " A variável " + CA.V.N.getSpelling() + " possui tipo " + CA.V.tipo + " [" + Token.spellings[CA.V.tipo] + "]" 
-				+ " enquanto a expressão possui tipo " + CA.E.tipo + " [" + Token.spellings[CA.E.tipo] + "].");
+				+ " A variável " + attributionCommand.V.N.getSpelling() + " possui tipo " + attributionCommand.V.tipo + " [" + Token.spellings[attributionCommand.V.tipo] + "]" 
+				+ " enquanto a expressao possui tipo " + attributionCommand.E.tipo + " [" + Token.spellings[attributionCommand.E.tipo] + "].");
 		}
 	}
 
@@ -100,7 +100,7 @@ public class Checker implements Visitor {
 		if (CC.E.tipo != TabelaDeIdentificação.BOOLEAN) {
 			cabeçalhoErro();
 			System.out.println("[T2] Tipos incompativeis no comando condicional." 
-					+ " A expressão possui tipo " + CC.E.tipo + " [" + Token.spellings[CC.E.tipo] + "]" 
+					+ " A expressao possui tipo " + CC.E.tipo + " [" + Token.spellings[CC.E.tipo] + "]" 
 					+ " enquanto era esperado o tipo " + TabelaDeIdentificação.BOOLEAN + " [" + Token.spellings[TabelaDeIdentificação.BOOLEAN] + "].");
 		}
 		if (CC.C1 != null) CC.C1.visit(this);
@@ -110,13 +110,13 @@ public class Checker implements Visitor {
 	@Override
 	public void visitComandoIterativo(ComandoIterativoNode CC) {
 		// TODO Auto-generated method stub
-		// REGRA T5. O tipo da expressão avaliada deve ser um valor lógico (booleano).
+		// REGRA T5. O tipo da expressao avaliada deve ser um valor lógico (booleano).
 		if (CC.E != null) CC.E.visit(this);
 		if (CC.E.tipo != TabelaDeIdentificação.BOOLEAN) {
 //			cabeçalhoErro(, (int) -1);
 			cabeçalhoErro();
 			System.out.println("[T5] Tipos incompativeis no comando iterativo." 
-					+ " A expressão possui tipo " + CC.E.tipo + " [" + Token.spellings[CC.E.tipo] + "]" 
+					+ " A expressao possui tipo " + CC.E.tipo + " [" + Token.spellings[CC.E.tipo] + "]" 
 					+ " enquanto era esperado o tipo " + TabelaDeIdentificação.BOOLEAN + " [" + Token.spellings[TabelaDeIdentificação.BOOLEAN] + "].");
 		}
 		if (CC.C != null) CC.C.visit(this);
@@ -212,7 +212,7 @@ public class Checker implements Visitor {
 	@Override
 	public void visitExpressãoSimples(ExpressãoSimplesNode ES) {
 		// TODO Auto-generated method stub
-		// REGRA T4. O tipo da expressão simples avaliada deve ser igual ao tipo do termo avaliado.
+		// REGRA T4. O tipo da expressao simples avaliada deve ser igual ao tipo do termo avaliado.
 		if (ES.T != null) {
 			ES.T.visit(this);
 			switch(ES.T.tipo) {
@@ -339,7 +339,7 @@ public class Checker implements Visitor {
 		if (S.E.tipo != TabelaDeIdentificação.INTEGER) {
 			cabeçalhoErro();
 			System.out.println("[T6] Tipos incompativeis do indice do seletor." 
-					+ " A expressão possui tipo " + S.E.tipo + " [" + Token.spellings[S.E.tipo] + "]" 
+					+ " A expressao possui tipo " + S.E.tipo + " [" + Token.spellings[S.E.tipo] + "]" 
 					+ " enquanto era esperado o tipo " + TabelaDeIdentificação.INTEGER + " [" + Token.spellings[TabelaDeIdentificação.INTEGER] + "].");
 		}
 		if (S.próximoS != null) {
@@ -521,7 +521,9 @@ public class Checker implements Visitor {
 		if (TA.INDEX_2  != null) TA.INDEX_2.visit(this);
 		if (Integer.parseInt(TA.INDEX_1.getSpelling()) > Integer.parseInt(TA.INDEX_2.getSpelling())) {
 			cabeçalhoErro();
-			System.out.println("[T8] Indices inválidos na declaracao de tipo agregado.");
+			System.out.println("[T8] Indices inválidos na declaracao de tipo agregado." 
+					+ " O primeiro indice possui valor " + TA.INDEX_1.getSpelling() 
+					+ " enquanto o segundo indice possui valor " + TA.INDEX_2.getSpelling() + ".");
 		}
 	}
 

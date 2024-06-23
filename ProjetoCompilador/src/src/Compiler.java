@@ -13,28 +13,12 @@ public class Compiler {
 	private TextFileReader reader;          //	Leitura do arquivo com código fonte
 	private Scanner scanner;		//	-l Analise léxica
 	private Parser parser;			//	-s Analise sintatica
-	private Printer printer;		// 	-a Impressão AST
+	private Printer printer;		// 	-a Impressao AST
 	private Checker checker;		// 	-c Analise de contexto
 //	private Coder coder;			// 	-g Geração de código
 	private ProgramaNode P;
 	
-	public Compiler() {
-		
-	}
-	public void setFilePath(String path) {
-		filePath = new String(path);
-	}
-	
-	public void resetReader() {
-		String text = new String();
-		reader = new TextFileReader(filePath);
-		text = reader.toString();
-		if (text.isEmpty()) {
-			System.out.println("O arquivo lido estava vazio.");
-		}
-	}
-	
-	public void analiseLexica() {
+	public void lexicalAnalysis() {
 		System.out.println("Caminho do arquivo-fonte: " + filePath);
 		resetReader(); // Reinicia a leitura do arquivo
 		System.out.println ("> Analise Léxica - START");
@@ -48,8 +32,8 @@ public class Compiler {
 		System.out.println ("");
 	}
 	
-	public void analiseSintatica() {
-		analiseLexica();
+	public void syntaxAnalysis() {
+		lexicalAnalysis();
 		resetReader();
 		System.out.println ("> Analise Sintatica - START");
 		reader.reset();
@@ -59,12 +43,12 @@ public class Compiler {
 		System.out.println ("");
 	}
 	
-	public void impressaoAST() {
-		analiseSintatica();
-		System.out.println ("> Impressão da Ast - START");
+	public void AST() {
+		syntaxAnalysis();
+		System.out.println ("> Impressao da Ast - START");
 		printer = new Printer();
 		printer.print(P);
-		System.out.println ("< Impressão da Ast - END");
+		System.out.println ("< Impressao da Ast - END");
 		System.out.println ("");
 	}
 	public void tabelaIdenfificacao() {
@@ -72,8 +56,8 @@ public class Compiler {
 		System.out.println(checker.getTabelaDeIdentificação().toString());
 		System.out.println ("< Tabela de Identificacao - END");
 	}
-	public void analiseContexto() {
-		impressaoAST();
+	public void contextAnalysis() {
+		AST();
 		System.out.println ("> Analise de Contexto - START");
 		checker = new Checker();
 		checker.check(P);
@@ -83,11 +67,24 @@ public class Compiler {
 	}
 	
 	public void geracaoCodigo() {
-		analiseContexto();
+		contextAnalysis();
 		System.out.println ("> GERAÇÃO DE CÓDIGO - START");
 //		coder = new Coder();
 //		coder.code(P);
 		System.out.println ("< GERAÇÃO DE CÓDIGO - END");
 		System.out.println ("");
+	}
+
+	public void setFilePath(String path) {
+		filePath = new String(path);
+	}
+	
+	public void resetReader() {
+		String text = new String();
+		reader = new TextFileReader(filePath);
+		text = reader.toString();
+		if (text.isEmpty()) {
+			System.out.println("O arquivo lido estava vazio.");
+		}
 	}
 }

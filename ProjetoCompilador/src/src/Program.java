@@ -1,11 +1,9 @@
-public class COMP {
-	private static void intrucoesIniciais() {
-		System.out.println("\n=== BEM-VINDO AO COMPILADOR ===\n");
-
+public class Program {
+	private static void initialInstructions() {
 		System.out.println("Escolha uma das opçoes de compilaçao:\n");
 		System.out.println("\t-l\tAnálise léxica");
 		System.out.println("\t-s\tAnálise sintática");
-		System.out.println("\t-a\tImpressão da AST");
+		System.out.println("\t-a\tImpressao da AST");
 		System.out.println("\t-c\tAnálise de contexto\n");
 
 		System.out.println("Para compilar, use o comando:");
@@ -20,21 +18,21 @@ Compiler compiler = new Compiler();
 String path = args.length > 1 ? args[1] : "";
 
 if (args.length <= 1 || args[0].equals("--help") || args[0].equals("-h")) {
-    intrucoesIniciais();
+    initialInstructions();
 } else {
     compiler.setFilePath(path);
     switch (args[0]) {
         case "-l":
-            compiler.analiseLexica();
+            compiler.lexicalAnalysis();
             break;
         case "-s":
-            compiler.analiseSintatica();
+            compiler.syntaxAnalysis();
             break;
         case "-a":
-            compiler.impressaoAST();
+            compiler.AST();
             break;
         case "-c":
-            compiler.analiseContexto();
+            compiler.contextAnalysis();
             break;
         case "-g":
             compiler.geracaoCodigo();
