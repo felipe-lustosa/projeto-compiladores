@@ -1,32 +1,27 @@
-! SINTÁTICO 
-program test;
+program sampleProgram;
 
-var a, b, c: integer;
-var d, e, j, y, u: real;
-var x : array[10 .. 20] of integer;
-var h, n: boolean;
+var i, j, k: integer;
+var f, g, h: real;
+var arr : array[1 .. 15] of integer;
+var flag, test: boolean;
 
 begin
-	if (a or b)  then
-		begin
-			x := y;
-			h := a;
-		end
-	else
-		begin
-			a:=b;
-			d:=e;
-			a:=d;
-			d:=c;
-			y:=x;
-			x:=y;
-			y[1]:=a;
-			while (x < (y+a+j))
-			do
-			x:=a;
-		end
-	;
-begin
-end;
-
+    if (i > j) then
+        begin
+            arr[1] := f;
+            flag := i > k;
+        end
+    else
+        begin
+            i := j;
+            f := g;
+            j := f;
+            g := k;
+            h := arr[5];
+            arr[10] := h;
+            while (arr[5] < (f + g + h))
+            do
+            arr[5] := i;
+        end
+    ;
 end.

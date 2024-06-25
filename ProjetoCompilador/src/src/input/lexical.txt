@@ -1,8 +1,8 @@
 ! LEXICO - 
+@#$
 tokenvalido
 tokeninválido
 ! tokeninválido
-@#$
 !@#$%'~
 	maisumteste
 	abcdefghijklmnopqrstuvwxyz
