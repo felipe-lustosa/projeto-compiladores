@@ -20,7 +20,7 @@ public class Compiler {
 	
 	public void lexicalAnalysis() {
 		System.out.println("Caminho do arquivo-fonte: " + filePath);
-		resetReader(); // Reinicia a leitura do arquivo
+		resetReader(); 
 		System.out.println ("Analise Léxica - Inicio");
 		scanner = new Scanner(reader);
 		Token temp = scanner.scan();
