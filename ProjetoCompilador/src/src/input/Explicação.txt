@@ -3,3 +3,4 @@ lexical.txt	- Análise Léxico, com teste de tokens válidos e inválidos
 sintatic.txt	- Análise Sintático, com teste com declaração de variáveis 
 ast.txt 	- Impressão de AST, com Sintaxe válida e contexto inválido 
 context.txt	- Análise de Contexto
+ok.txt	- Exemplo de cadeia bem formada
