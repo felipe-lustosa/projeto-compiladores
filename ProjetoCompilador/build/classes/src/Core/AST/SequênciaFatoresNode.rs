@@ -1,1 +1,1 @@
-Core.AST.SequênciaFatoresNode
+Main.AST.SequênciaFatoresNode

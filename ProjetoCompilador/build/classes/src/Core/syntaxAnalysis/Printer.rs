@@ -1,1 +1,1 @@
-Core.syntaxAnalysis.Printer
+Main.syntaxAnalysis.Printer

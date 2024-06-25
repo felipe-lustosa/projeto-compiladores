@@ -1,1 +1,1 @@
-Core.AST.SequênciaTermosNode
+Main.AST.SequênciaTermosNode

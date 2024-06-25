@@ -1,1 +1,1 @@
-Core.contextAnalysis.TabelaDeIdentificação
+Main.contextAnalysis.TabelaDeIdentificação

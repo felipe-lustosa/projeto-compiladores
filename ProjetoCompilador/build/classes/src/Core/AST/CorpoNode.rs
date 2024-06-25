@@ -1,1 +1,1 @@
-Core.AST.CorpoNode
+Main.AST.CorpoNode

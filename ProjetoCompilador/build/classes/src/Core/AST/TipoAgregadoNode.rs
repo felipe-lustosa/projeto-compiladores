@@ -1,1 +1,1 @@
-Core.AST.TipoAgregadoNode
+Main.AST.TipoAgregadoNode

@@ -1,1 +1,1 @@
-Core.AST.VariávelNode
+Main.AST.VariávelNode

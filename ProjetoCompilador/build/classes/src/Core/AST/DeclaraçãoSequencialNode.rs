@@ -1,1 +1,1 @@
-Core.AST.DeclaraçãoSequencialNode
+Main.AST.DeclaraçãoSequencialNode

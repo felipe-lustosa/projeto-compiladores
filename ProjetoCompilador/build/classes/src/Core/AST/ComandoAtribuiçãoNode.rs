@@ -1,1 +1,1 @@
-Core.AST.ComandoAtribuiçãoNode
+Main.AST.ComandoAtribuiçãoNode

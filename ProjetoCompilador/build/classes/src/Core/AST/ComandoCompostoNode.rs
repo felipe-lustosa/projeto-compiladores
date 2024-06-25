@@ -1,1 +1,1 @@
-Core.AST.ComandoCompostoNode
+Main.AST.ComandoCompostoNode

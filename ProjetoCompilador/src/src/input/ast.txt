@@ -1,27 +1,27 @@
 ! AST - 
-program test;
+program calculation;
 
-var a, b: real;
-var x : array[10 .. 20] of integer;
+var num1, num2: integer;
+var result : array[1 .. 10] of real;
 
 begin
-	if (a or b)  then
-		begin
-			x := y;
-			h := a;
-		end
-	else
-		begin
-			a:=b;
-			d:=e;
-			y[1]:=a;
-			while (x < (y+a+j))
-			do
-			x:=a;
-		end
-	;
-	
-	begin
-	end;
+    if (num1 > num2) then
+        begin
+            result := process;
+            total := num1;
+        end
+    else
+        begin
+            num1:=num2;
+            sum:=add;
+            process[3]:=num1;
+            while (result < (process+num1+num2))
+            do
+            result:=num1;
+        end
+    ;
+    
+    begin
+    end;
 
 end.

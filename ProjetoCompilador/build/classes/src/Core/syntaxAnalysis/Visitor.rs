@@ -1,1 +1,1 @@
-Core.syntaxAnalysis.Visitor
+Main.syntaxAnalysis.Visitor

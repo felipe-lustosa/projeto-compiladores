@@ -1,1 +1,1 @@
-Core.lexicalAnalysis.Scanner
+Main.lexicalAnalysis.Scanner

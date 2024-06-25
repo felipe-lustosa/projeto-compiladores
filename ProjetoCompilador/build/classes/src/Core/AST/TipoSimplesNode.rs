@@ -1,1 +1,1 @@
-Core.AST.TipoSimplesNode
+Main.AST.TipoSimplesNode

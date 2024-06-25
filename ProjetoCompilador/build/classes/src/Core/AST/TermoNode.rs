@@ -1,1 +1,1 @@
-Core.AST.TermoNode
+Main.AST.TermoNode

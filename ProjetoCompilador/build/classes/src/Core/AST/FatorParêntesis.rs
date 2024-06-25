@@ -1,1 +1,1 @@
-Core.AST.FatorParêntesis
+Main.AST.FatorParêntesis

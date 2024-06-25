@@ -1,1 +1,1 @@
-Core.fileReader.TextFileReader
+Main.fileReader.TextFileReader

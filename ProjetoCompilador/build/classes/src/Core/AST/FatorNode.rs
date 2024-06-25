@@ -1,1 +1,1 @@
-Core.AST.FatorNode
+Main.AST.FatorNode

@@ -1,1 +1,1 @@
-Core.AST.DeclaraçãoNode
+Main.AST.DeclaraçãoNode

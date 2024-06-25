@@ -1,1 +1,1 @@
-Core.lexicalAnalysis.Token
+Main.lexicalAnalysis.Token

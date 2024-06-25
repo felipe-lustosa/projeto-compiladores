@@ -1,1 +1,1 @@
-Core.AST.OperadorNode
+Main.AST.OperadorNode

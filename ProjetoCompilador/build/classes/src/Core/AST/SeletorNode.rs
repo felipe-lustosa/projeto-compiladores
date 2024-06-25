@@ -1,1 +1,1 @@
-Core.AST.SeletorNode
+Main.AST.SeletorNode

@@ -1,1 +1,1 @@
-Core.AST.ComandoNode
+Main.AST.ComandoNode

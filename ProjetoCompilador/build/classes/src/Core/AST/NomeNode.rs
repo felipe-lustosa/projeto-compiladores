@@ -1,1 +1,1 @@
-Core.AST.NomeNode
+Main.AST.NomeNode

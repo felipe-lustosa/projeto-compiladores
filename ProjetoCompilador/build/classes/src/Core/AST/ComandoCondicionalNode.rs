@@ -1,1 +1,1 @@
-Core.AST.ComandoCondicionalNode
+Main.AST.ComandoCondicionalNode

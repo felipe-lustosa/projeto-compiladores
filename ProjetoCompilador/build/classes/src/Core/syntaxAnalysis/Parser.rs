@@ -1,1 +1,1 @@
-Core.syntaxAnalysis.Parser
+Main.syntaxAnalysis.Parser

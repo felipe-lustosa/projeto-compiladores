@@ -1,1 +1,1 @@
-Core.AST.ListaDeComandosNode
+Main.AST.ListaDeComandosNode
